@@ -13,18 +13,16 @@ The HUD shows:
 
 Both bars render from **0% → 100% used** (inverted from APIs that report remaining quota).
 
+![Screenshot showing claude code web](claude-code-screenshot.png)
+
+![Screenshot showing codex cloud](codex-cloud-screenshot.png)
+
 If usage can't be fetched yet:
 
 - Shows **`not logged in`** for auth failures (`401` / `403`)
 - Shows **`error`** for other failures
 
 For debugging, open Web Console and filter for `"[usage-hud]"` log lines.
-
-## Files
-
-- `manifest.json` – Firefox extension manifest
-- `content.js` – content script that injects HUD and fetches usage
-- `styles.css` – HUD styles
 
 ## Load in Firefox (Temporary Add-on)
 
@@ -34,6 +32,13 @@ For debugging, open Web Console and filter for `"[usage-hud]"` log lines.
 4. Click **Load Temporary Add-on...**.
 5. Select `manifest.json` from this folder.
 6. Open `chatgpt.com` or `claude.ai` in a tab.
+
+## Files
+
+- `manifest.json` – Firefox extension manifest
+- `content.js` – content script that injects HUD and fetches usage
+- `styles.css` – HUD styles
+
 
 ## Notes on API behavior
 
