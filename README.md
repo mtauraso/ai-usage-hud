@@ -7,22 +7,17 @@ Tiny personal Firefox extension that adds a top-page banner HUD on:
 
 The HUD shows:
 
-- **Session usage** bar
-- **Weekly usage** bar
-- A tiny debug line with last update time
+- **Session and Weekly usage** bars
+- **Line showing time elapsed** within the session or week
+- Last updated time, session end times, and links to billing/usage.
 
-Both bars render from **0% → 100% used** (inverted from APIs that report remaining quota).
+Both bars render from **0% → 100% used** (inverted from codex which reports remaining quota).
+
+## Screenshots
 
 ![Screenshot showing claude code web](claude-code-screenshot.png)
 
 ![Screenshot showing codex cloud](codex-cloud-screenshot.png)
-
-If usage can't be fetched yet:
-
-- Shows **`not logged in`** for auth failures (`401` / `403`)
-- Shows **`error`** for other failures
-
-For debugging, open Web Console and filter for `"[usage-hud]"` log lines.
 
 ## Load in Firefox (Temporary Add-on)
 
@@ -32,6 +27,15 @@ For debugging, open Web Console and filter for `"[usage-hud]"` log lines.
 4. Click **Load Temporary Add-on...**.
 5. Select `manifest.json` from this folder.
 6. Open `chatgpt.com` or `claude.ai` in a tab.
+
+## Error behavior
+
+If usage can't be fetched yet:
+
+- Shows **`not logged in`** for auth failures (`401` / `403`)
+- Shows **`error`** for other failures
+
+For debugging, open Web Console and filter for `"[usage-hud]"` log lines.
 
 ## Files
 
