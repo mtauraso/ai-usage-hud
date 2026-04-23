@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "Usage HUD (ChatGPT + Claude)",
+  "version": "0.1.0",
+  "description": "Shows a top-of-page quota usage HUD on chatgpt.com and claude.ai.",
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "https://chatgpt.com/*",
+    "https://claude.ai/*",
+    "tabs"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://claude.ai/*"
+      ],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_start"
+    }
+  ]
+}
